@@ -1,50 +1,8 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Culture Music Festival - Fundraisers</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-      crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
+{% extends 'base.html' %}
 
-  <body>
-    <!-- Header -->
-    <header class="header-section sticky-top">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-             <div class="col-md-3">
-                <div class="logo">
-                <img src="img/logo-cm150x63.png" alt="Culture Music Festival Logo" />
-                </div>
-                <div class="brand-tagline fst-italic">Celebrating Heritage Through Music</div>
-            </div>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-            </ul>
-             <!-- Search Bar -->
-            <form class="search-form d-flex flex-wrap gap-2 align-items-center" role="search">
-                <input class="form-control search-input" type="search" placeholder="Search Events" aria-label="Search Events" />
-                <input class="form-control search-input" type="search" placeholder="Choose Location" aria-label="Choose Location" />
+{% block title %}Culture Music - Fundraisers{% endblock %}
 
-              <select class="form-select filter-select" aria-label="Event type filter">
-                <option selected>Event Type</option>
-                <option>Free</option>
-                <option>Ticketed</option>
-              </select>
-              <button class="btn btn-search" type="submit">Search</button>
-            </form>
-        </div>
-        </nav>
-    </header>
-   
-    <main class="main-content">
+{% block main %}
       <!-- Hero Banner -->
       <section class="home-hero text-white mb-4">
         <div class="container-fluid py-5">
@@ -102,7 +60,7 @@ Join events, engage with different cultures, and help build a community where he
                 <article class="card h-100 fundraiser-panel">
                   <div class="card-image">
                     <img
-                      src="img/ernestoeslava-mariachi-2770114_1920.jpg"
+                      src="{{ url_for('static', filename='img/ernestoeslava-mariachi-2770114_1920.jpg') }}"
                       class="card-img-top"
                       alt="Fiesta del Movimiento" />
                   </div>
@@ -122,7 +80,7 @@ Join events, engage with different cultures, and help build a community where he
                 <article class="card h-100 fundraiser-panel">
                   <div class="card-image">
                     <img
-                      src="img/dedy_timbul-gamelan-7852175_1920.jpg"
+                      src="{{ url_for('static', filename='img/dedy_timbul-gamelan-7852175_1920.jpg') }}"
                       class="card-img-top"
                       alt="Gamelan Nusantara" />
                   </div>
@@ -142,7 +100,7 @@ Join events, engage with different cultures, and help build a community where he
                 <article class="card h-100 fundraiser-panel">
                   <div class="card-image">
                     <img
-                      src="img/thukka-ai-generated-8309769_1920.jpg"
+                      src="{{ url_for('static', filename='img/thukka-ai-generated-8309769_1920.jpg') }}"
                       class="card-img-top"
                       alt="Voices of Tradition" />
                   </div>
@@ -162,7 +120,7 @@ Join events, engage with different cultures, and help build a community where he
                 <article class="card h-100 fundraiser-panel">
                   <div class="card-image">
                     <img
-                      src="img/3935302-adult-3169948_1920.jpg"
+                      src="{{ url_for('static', filename='img/3935302-adult-3169948_1920.jpg') }}"
                       class="card-img-top"
                       alt="Echoes of the Past" />
                   </div>
@@ -191,7 +149,7 @@ Join events, engage with different cultures, and help build a community where he
                 <article class="card h-100 fundraiser-panel">
                   <div class="card-image">
                     <img
-                      src="img/timokefoto-african-2771092_1920.jpg"
+                      src="{{ url_for('static', filename='img/timokefoto-african-2771092_1920.jpg') }}"
                       alt="Spirit of Country"
                       class="card-img-top img-fluid" />
                   </div>
@@ -212,7 +170,7 @@ Join events, engage with different cultures, and help build a community where he
                 <article class="card h-100 fundraiser-panel">
                   <div class="card-image">
                     <img
-                      src="img/scratsmacker-outdoors-5159662_1920.jpg"
+                      src="{{ url_for('static', filename='img/scratsmacker-outdoors-5159662_1920.jpg') }}"
                       alt="Culture Jam"
                       class="card-img-top img-fluid" />
                   </div>
@@ -233,7 +191,7 @@ Join events, engage with different cultures, and help build a community where he
                 <article class="card h-100 fundraiser-panel">
                   <div class="card-image">
                     <img
-                      src="img/tylijura-audience-10363726_1920.jpg"
+                      src="{{ url_for('static', filename='img/tylijura-audience-10363726_1920.jpg') }}"
                       alt="Unity Sound"
                       class="card-img-top img-fluid" />
                   </div>
@@ -254,7 +212,7 @@ Join events, engage with different cultures, and help build a community where he
                 <article class="card h-100 fundraiser-panel">
                   <div class="card-image">
                     <img
-                      src="img/u_ju3xxfbm56-gamelan-10402878_1920.png"
+                      src="{{ url_for('static', filename='img/u_ju3xxfbm56-gamelan-10402878_1920.png') }}"
                       alt="Rhythm Roots"
                       class="card-img-top img-fluid" />
                   </div>
@@ -274,24 +232,4 @@ Join events, engage with different cultures, and help build a community where he
         </div>
       </section>
 
-    </main>
-    <!-- Footer -->
-    <footer class="footer-section">
-      <div class="container-fluid py-5">
-        <div class="row">
-          <div class="col-md-8">
-            <nav class="footer-nav mb-4">
-              <a href="#guidelines">Privacy & Fundraising Guidelines</a>
-              |
-              <a href="#terms">Terms and Conditions</a>
-              |
-              <a href="#contact">Contact Us</a>
-              |
-              <a href="#login">Login/Register</a>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </body>
-</html>
+{% endblock %}

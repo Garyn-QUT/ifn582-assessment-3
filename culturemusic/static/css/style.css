@@ -28,18 +28,51 @@ body {
   background-color: white;
 }
 
+.navbar-inner {
+  align-items: center;
+  gap: 1rem;
+  min-height: 116px;
+}
+
+.site-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 0 0 190px;
+  max-width: 190px;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
 .logo {
-  display: inline-block;
+  display: block;
   text-align: left;
-  padding: 10px 20px;
-  max-height: 100px;
-  max-width: 250px;
-  width: auto;
+  padding: 0;
+}
+
+.logo img {
+  display: block;
+  height: auto;
+  max-width: 180px;
+  width: 100%;
 }
 
 .brand-tagline {
+  display: block;
+  margin-top: 0.25rem;
   color: var(--text-medium);
   text-align: left;
+  font-size: 0.9rem;
+  white-space: normal;
+}
+
+.site-nav {
+  flex: 0 0 auto;
+}
+
+.search-form {
+  flex: 1 1 520px;
+  min-width: 0;
 }
 
 .header-section .nav-link {
@@ -75,17 +108,55 @@ body {
 }
 
 @media (min-width: 992px) {
-  .search-section .search-form {
+  .navbar-collapse {
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .search-form {
     display: grid !important;
-    grid-template-columns: minmax(220px, 1.6fr) repeat(4, minmax(130px, 1fr)) auto;
-    gap: 12px !important;
+    grid-template-columns: minmax(140px, 1.15fr) minmax(140px, 1.15fr) minmax(120px, 0.9fr) auto auto;
+    gap: 0.25rem !important;
     align-items: center;
   }
 
-  .search-section .search-form .search-input,
-  .search-section .search-form .filter-select,
-  .search-section .search-form .btn-search {
+  .search-form .search-input,
+  .search-form .filter-select {
     min-width: 0;
+    width: 100%;
+  }
+
+  .search-form .btn-search {
+    width: 90px;
+    min-width: 70px;
+    margin-right: 0.25rem;
+  }
+
+  .search-form .btn-login {
+    width: 90px;
+    min-width: 70px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar-inner {
+    min-height: 0;
+  }
+
+  .navbar-collapse {
+    padding-top: 1rem;
+  }
+
+  .search-form {
+    align-items: stretch !important;
+    width: 100%;
+  }
+
+  .search-form .search-input,
+  .search-form .filter-select,
+  .search-form .btn-search,
+  .search-form .btn-login {
+    flex: 1 1 100%;
     width: 100%;
   }
 }
@@ -140,17 +211,25 @@ body {
   outline: none;
 }
 
+.btn-search,
+.btn-login {
+  min-height: 38px;
+  padding: 8px 14px;
+  line-height: 1.2;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .btn-search {
   background-color: var(--primary-color);
   color: white;
-  border: none;
-  border-radius: 5px;
-  font-weight: 600;
   transition: background-color 0.3s ease;
-  white-space: nowrap;
-  transition:
-    background-color 0.3s ease,
-    box-shadow 0.3s ease;
 }
 
 .btn-search:hover,
@@ -159,6 +238,26 @@ body {
 .btn-view:focus {
   background-color: #6b3410;
   color: white;
+}
+
+.btn-login {
+  background-color: var(--secondary-color);
+  color: var(--text-dark);
+  transition: background-color 0.3s ease;
+}
+
+.btn-login:hover,
+.btn-login:focus {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.auth-panel {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(27, 77, 62, 0.08);
 }
 
 .btn-search:focus,
