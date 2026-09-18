@@ -88,25 +88,6 @@ body {
   border-bottom: 3px solid var(--primary-color);
 }
 
-/* ========================================
-   Search Section
-   ======================================== */
-.search-section {
-  background-color: var(--bg-light);
-  border-bottom: 1px solid var(--border-color);
-}
-
-.search-section > article {
-  width: 100%;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-}
-
-.search-section form {
-  justify-content: flex-start;
-}
-
 @media (min-width: 992px) {
   .navbar-collapse {
     align-items: center;
@@ -115,7 +96,9 @@ body {
 
   .search-form {
     display: grid !important;
-    grid-template-columns: minmax(140px, 1.15fr) minmax(140px, 1.15fr) minmax(120px, 0.9fr) auto auto;
+    grid-template-columns:
+      minmax(140px, 1.15fr) minmax(140px, 1.15fr) minmax(120px, 0.9fr)
+      auto auto;
     gap: 0.25rem !important;
     align-items: center;
   }
@@ -286,7 +269,7 @@ body {
 .home-hero {
   background: url("../img/djovan-generated-9233757_1920.jpg") center/cover;
   position: relative;
-  min-height: 400px;
+  min-height: 40vh;
 }
 
 .fundraiser-hero::before {
@@ -314,30 +297,30 @@ body {
   z-index: 3;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px 20px;
   text-align: center;
 }
 
 .hero-title {
   color: white;
-  font-size: 32px;
+  font-size: 30px;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .hero-subtitle {
   color: #f0f0f0;
-  font-size: 18px;
+  font-size: 17px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .hero-values {
-  margin-top: 24px;
+  margin-top: 10px;
 }
 
 .hero-values article {
-  padding: 16px;
+  padding: 8px 10px;
   background: rgba(0, 0, 0, 0.28);
   border-top: 3px solid var(--secondary-color);
 }
@@ -369,13 +352,6 @@ body {
     padding-left: 15px; */
 }
 
-.event-filter-options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: flex-end;
-}
-
 .event-filter-option {
   border: 1px solid var(--primary-color);
   border-radius: 999px;
@@ -400,17 +376,6 @@ body {
 .event-filter-option:focus-visible {
   box-shadow: 0 0 0 3px rgba(252, 209, 22, 0.45);
   outline: none;
-}
-
-@media (max-width: 576px) {
-  .event-filter {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .event-filter-options {
-    justify-content: flex-start;
-  }
 }
 
 .card-image {
@@ -479,38 +444,6 @@ body {
   background-color: var(--bg-light);
 }
 
-.admin-hero {
-  background: url("../img/stux-tools-191794_1920.jpg") center/cover;
-  background-color: var(--primary-color);
-  position: relative;
-}
-
-.admin-hero::before {
-  background: rgba(0, 0, 0, 0.48);
-  content: "";
-  inset: 0;
-  position: absolute;
-}
-
-.admin-hero > .container-fluid {
-  position: relative;
-  z-index: 1;
-}
-
-.admin-hero h1,
-.admin-hero p {
-  color: white;
-}
-
-.admin-eyebrow {
-  color: var(--secondary-color);
-}
-
-.admin-update-note {
-  color: white;
-  font-size: 0.9rem;
-}
-
 .admin-stat {
   border-top: 4px solid var(--primary-color);
   height: 100%;
@@ -556,21 +489,6 @@ body {
   max-width: 180px;
 }
 
-.admin-action-select {
-  max-width: 160px;
-}
-
-.admin-status-cell {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-
-.admin-row-status {
-  min-width: 100px;
-}
-
 .admin-action-divider {
   border-left: 1px solid var(--border-color);
   height: 28px;
@@ -590,14 +508,12 @@ body {
   white-space: nowrap;
 }
 
-.btn-admin-filter,
 .btn-admin-action {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
   color: white;
 }
 
-.btn-admin-filter:hover,
 .btn-admin-action:hover,
 .btn-admin-action:focus,
 .btn-admin-action:active,
@@ -630,37 +546,9 @@ body {
   color: white;
 }
 
-.admin-report-row {
-  align-items: center;
-  border-bottom: 1px solid var(--border-color);
-  display: flex;
-  gap: 1rem;
-  justify-content: space-between;
-  padding: 1rem 0;
-}
-
-.admin-report-row:last-child {
-  border-bottom: 0;
-  padding-bottom: 0;
-}
-
-.admin-status-list li {
-  align-items: center;
-  display: flex;
-  gap: 0.5rem;
-  padding: 0.5rem 0;
-}
-
 @media (max-width: 767px) {
-  .admin-report-row {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
   .admin-search,
-  .admin-filter-select,
-  .admin-action-select,
-  .admin-row-status {
+  .admin-filter-select {
     max-width: none;
     width: 100%;
   }
@@ -728,7 +616,7 @@ body {
 
 .fundraiser-panel,
 .update-panel {
-  padding: 24px;
+  padding: 18px;
 }
 
 .donation-page > section > .container {
@@ -760,14 +648,6 @@ body {
 
 .donation-details[open] summary {
   margin-bottom: 24px;
-}
-
-.donation-form-hidden {
-  display: none;
-}
-
-.donation-form-visible {
-  display: block;
 }
 
 .progress {
@@ -962,12 +842,6 @@ body {
   color: var(--text-light);
   font-size: 0.9rem;
   text-transform: uppercase;
-}
-
-.campaign-section-title {
-  color: var(--primary-color);
-  font-size: 1.4rem;
-  font-weight: 700;
 }
 
 .campaign-panel-heading {
