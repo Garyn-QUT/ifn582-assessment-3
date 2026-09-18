@@ -11,12 +11,22 @@ class LoginForm(FlaskForm):
 
 class RegisterForm(FlaskForm):
     """Form for user registry."""
-    username = StringField("Username", validators = [InputRequired()])
+    username = StringField("Username", validators = [InputRequired(message="Please enter a username.")])
     password = PasswordField("Password", validators = [InputRequired()])
     email = StringField("Email", validators = [InputRequired(), email()])
     firstname = StringField("Your first name", validators = [InputRequired()])
     surname = StringField("Your surname", validators = [InputRequired()])
     phone = StringField("Your phone number", validators = [InputRequired()])
+    # Organisation selection field with predefined choices: (id,name)
+    organisation = SelectField(
+        "Organisation",
+        choices=[
+            ("1", "Italian Cultural Group"),
+            ("2", "Pacific Arts Collective"),
+            ("3", "Pamana Filipino in Brisbane"),
+        ],
+        validators=[InputRequired()],
+    )
     submit = SubmitField("Make Account")
 
 
@@ -30,7 +40,7 @@ class DonationForm(FlaskForm):
     donor_message = TextAreaField('Message', validators=[Optional()])
     anonymous_donation = BooleanField('Make my donation anonymous')
     campaign_updates = BooleanField('Email me campaign updates')
-    donation_payment = SelectField('Method of payment', choices=[('Credit Card', 'Credit Card'), ('PayPal', 'PayPal'), ('Google Pay', 'Google Pay')], validators=[InputRequired()])
+    donation_payment = SelectField('Payment Method', choices=[('Credit Card', 'Credit Card'), ('PayPal', 'PayPal'), ('Google Pay', 'Google Pay')], validators=[InputRequired()])
     submit = SubmitField('Submit Donation')
 
 

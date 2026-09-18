@@ -9,6 +9,7 @@ class UserInfo:
     surname: str
     email: str
     phone: str
+    organisation: str = ''
 
 
 @dataclass

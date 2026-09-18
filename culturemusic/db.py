@@ -73,7 +73,8 @@ def add_user(form):
         UserAccount(form.username.data, form.password.data, form.email.data,
             UserInfo(f'U{len(Users)}', 
                      form.firstname.data, form.surname.data , 
-                     form.email.data, form.phone.data
+                     form.email.data, form.phone.data,
+                     form.organisation.data
                     )
         )
     )
